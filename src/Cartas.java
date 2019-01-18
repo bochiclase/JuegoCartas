@@ -200,6 +200,7 @@ public class Cartas {
 			
 		}
 		if (sumajugador==21 ) {
+			
 			System.out.println("TIENES BLACKJACK");
 		}	
 		
