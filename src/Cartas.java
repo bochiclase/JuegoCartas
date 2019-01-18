@@ -128,8 +128,8 @@ public class Cartas {
 		char si ='s';
 		char no ='n';
 		
-		do {
-		 
+		
+		 do {
 		System.out.println();
 		System.out.println();
 		System.out.println("¿Quieres otra carta?");
@@ -163,7 +163,8 @@ public class Cartas {
 			}
 			
 		}
-		} while (letra == si && sumajugador<22);	
+		 
+		
 		
 		
 		if (letra == no) {
@@ -186,25 +187,29 @@ public class Cartas {
 			
 			if(sumacrupier == sumajugador) {
 				
-				System.out.println("EMPATES");	
+				System.out.println("EMPATES");
+				break;
 			}
 			
 			if (sumacrupier<sumajugador && sumajugador<22 || sumacrupier>21 || sumajugador==21) {
-				System.out.println("ENORABUENA HAS GANADO");	
+				System.out.println("ENORABUENA HAS GANADO");
+				break;
 			}
 			
 			if(sumacrupier>sumajugador && sumacrupier<22 || sumacrupier == 21)
 			{
 				System.out.println("Lo siento has perdido, la BANCA GANA");
+				break;
 			}
 			
 		}
 		if (sumajugador==21 ) {
 			
 			System.out.println("TIENES BLACKJACK");
+			break;
 		}	
 		
-		
+		 }while(letra != si || letra != no);
 		
 	}
 	}
