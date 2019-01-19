@@ -90,9 +90,9 @@ public class Cartas {
 
 	do {	
 		System.out.println ("¿¿¿Quieres Jugar???"); 
-        System.out.println ("Pulsa S o N");
+        System.out.println ("Pulsa S");
         contestacion =sc.next().charAt(0);
-        if (contestacion != afi) {
+        if (Character.toLowerCase(contestacion) != afi) {
         	System.out.println("ADIOS");
         	break;
         	
@@ -132,7 +132,7 @@ public class Cartas {
 		int pesocrupier = valor();
 		int preciocrupier = ValorVerdadero(pesocrupier);
 		String cartacrupier = figuras(pesocrupier);
-		System.out.println("#################################################");
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		System.out.println("CARTAS DE LA BANCA");
 		System.out.println();
 		System.out.println("La banca muestra " + cartacrupier + " de " + palo() + " vale " + preciocrupier);
@@ -160,7 +160,7 @@ public class Cartas {
 		letra=t.next().charAt(0);
 		
 		
-		if ( letra == si) {
+		if ( Character.toLowerCase(letra) == si) {
 			
 			pesojugador = valor();
 			preciojugador = ValorVerdadero(pesojugador);
@@ -191,9 +191,7 @@ public class Cartas {
 		}
 		 
 		
-		
-		
-		if (letra == no) {
+		if (Character.toLowerCase(letra) == no) {
 			
 			do {
 			int pesocrupier2 = valor();
@@ -201,11 +199,13 @@ public class Cartas {
 			String cartacrupier2 = figuras(pesocrupier2);
 			System.out.println();
 			System.out.println();
-			System.out.println("#################################################");
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			System.out.println("CARTAS DE LA BANCA");
 			System.out.println();
 			System.out.println("La banca muestra " + cartacrupier2 + " de " + palo() + " vale " + preciocrupier2);
 			sumacrupier += preciocrupier2;
+			System.out.println();
+			System.out.println();
 			System.out.println("La  BANCA tiene " + sumacrupier);
 			
 			}while (sumacrupier<17);
@@ -247,11 +247,11 @@ public class Cartas {
 			break;
 		}	
 		
-		 }while(letra != si || letra != no);
+		 }while(Character.toLowerCase(letra) != si || Character.toLowerCase(letra) != no);
 		
 	}
         }
-	} while(contestacion== afi);
+	} while(Character.toLowerCase(contestacion) == afi);
 
 	}
 	
