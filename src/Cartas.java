@@ -83,12 +83,31 @@ public class Cartas {
 	
 	
 	public static void main(String[] args) {
-		 //PARA JUGADOR
+		Scanner sc = new Scanner(System.in);
+		char contestacion;
+		char afi ='s';
+		
+
+	do {	
+		System.out.println ("¿¿¿Quieres Jugar???"); 
+        System.out.println ("Pulsa S o N");
+        contestacion =sc.next().charAt(0);
+        if (contestacion != afi) {
+        	System.out.println("ADIOS");
+        	break;
+        	
+        }
+        else {
+		//PARA JUGADOR
 		int sumajugador =0;
 		int resta =0;
 		int pesojugador;
 		int preciojugador;
 		String cartajugador;
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("#################################################");
 		System.out.println("TUS CARTAS SON");
 		System.out.println();
 		for	(int i=1; i<3;i++) {
@@ -100,7 +119,9 @@ public class Cartas {
 			resta = 21 - sumajugador;
 		}
 		System.out.println();
+		System.out.println("--------------------------------");
 		System.out.println("El valor de tus cartas es " + sumajugador);
+		System.out.println("--------------------------------");
 		System.out.println("Te faltan " + resta + " para BLACKJACK");
 		System.out.println();
 		System.out.println();
@@ -111,6 +132,7 @@ public class Cartas {
 		int pesocrupier = valor();
 		int preciocrupier = ValorVerdadero(pesocrupier);
 		String cartacrupier = figuras(pesocrupier);
+		System.out.println("#################################################");
 		System.out.println("CARTAS DE LA BANCA");
 		System.out.println();
 		System.out.println("La banca muestra " + cartacrupier + " de " + palo() + " vale " + preciocrupier);
@@ -133,7 +155,7 @@ public class Cartas {
 		System.out.println();
 		System.out.println();
 		System.out.println("¿Quieres otra carta?");
-		System.out.println("Pulsa S para SI o Pulsa N para NO");
+		System.out.println("Pulsa S para SI o Pulsa N para NO.   Recuerda llevas un total de " + sumajugador);
 		
 		letra=t.next().charAt(0);
 		
@@ -143,13 +165,17 @@ public class Cartas {
 			pesojugador = valor();
 			preciojugador = ValorVerdadero(pesojugador);
 			cartajugador = figuras(pesojugador);
-			System.out.println();;
+			System.out.println();
+			System.out.println("#################################################");
+			System.out.println("TUS CARTAS SON");
+			System.out.println();
 			System.out.println("La carta es " + cartajugador + " de " + palo() + " vale " + preciojugador);
 			sumajugador += preciojugador;
 			resta = 21 - sumajugador;
 			System.out.println();
-			System.out.println();
+			System.out.println("--------------------------------");
 			System.out.println("El valor de tus cartas es " + sumajugador);
+			System.out.println("--------------------------------");
 			System.out.println();
 			if (sumajugador >21) {
 				System.out.println("Lo siento te has pasado");
@@ -174,31 +200,41 @@ public class Cartas {
 			int preciocrupier2 = ValorVerdadero(pesocrupier2);
 			String cartacrupier2 = figuras(pesocrupier2);
 			System.out.println();
+			System.out.println();
+			System.out.println("#################################################");
 			System.out.println("CARTAS DE LA BANCA");
 			System.out.println();
 			System.out.println("La banca muestra " + cartacrupier2 + " de " + palo() + " vale " + preciocrupier2);
 			sumacrupier += preciocrupier2;
-			System.out.println("La suma total de la BANCA es " + sumacrupier);
+			System.out.println("La  BANCA tiene " + sumacrupier);
+			
 			}while (sumacrupier<17);
 			
 			
 			System.out.println("Tu tienes " + sumajugador);
 			System.out.println();
+			System.out.println();
 			
 			if(sumacrupier == sumajugador) {
 				
 				System.out.println("EMPATES");
+				System.out.println();
+				System.out.println();
 				break;
 			}
 			
 			if (sumacrupier<sumajugador && sumajugador<22 || sumacrupier>21 || sumajugador==21) {
 				System.out.println("ENORABUENA HAS GANADO");
+				System.out.println();
+				System.out.println();
 				break;
 			}
 			
 			if(sumacrupier>sumajugador && sumacrupier<22 || sumacrupier == 21)
 			{
 				System.out.println("Lo siento has perdido, la BANCA GANA");
+				System.out.println();
+				System.out.println();
 				break;
 			}
 			
@@ -206,11 +242,17 @@ public class Cartas {
 		if (sumajugador==21 ) {
 			
 			System.out.println("TIENES BLACKJACK");
+			System.out.println();
+			System.out.println();
 			break;
 		}	
 		
 		 }while(letra != si || letra != no);
 		
 	}
+        }
+	} while(contestacion== afi);
+
 	}
+	
 }
